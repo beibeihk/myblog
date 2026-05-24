@@ -1,0 +1,6 @@
+name = "myblog"                 # 你的项目名，英文即可
+compatibility_date = "2025-12-31"
+main = "workers-site/index.js"  # Worker 入口脚本
+
+[site]
+bucket = "./public"             # Hexo 生成的静态文件目录（相对路径）
