@@ -2,6 +2,8 @@
 
 这个项目已经改成了“一次 `git push`，同时更新 GitHub Pages，并在配置好密钥后自动更新 CloudBase”的模式。
 
+当前推荐主流程：GitHub 仓库保存 Hexo 源码，GitHub Actions 负责产出并发布 `public/`。
+
 ## 现在项目里的关键设置
 
 - Hexo 正式地址改成了 GitHub Pages 域名
