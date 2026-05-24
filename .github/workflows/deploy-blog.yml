@@ -63,26 +63,38 @@ jobs:
 
   deploy-cloudbase:
     needs: build
-    if: ${{ secrets.TCB_SECRET_ID != '' && secrets.TCB_SECRET_KEY != '' && secrets.TCB_ENV_ID != '' }}
     runs-on: ubuntu-latest
+    env:
+      TCB_SECRET_ID: ${{ secrets.TCB_SECRET_ID }}
+      TCB_SECRET_KEY: ${{ secrets.TCB_SECRET_KEY }}
+      TCB_ENV_ID: ${{ secrets.TCB_ENV_ID }}
 
     steps:
+      - name: Skip when CloudBase secrets are not configured
+        if: ${{ env.TCB_SECRET_ID == '' || env.TCB_SECRET_KEY == '' || env.TCB_ENV_ID == '' }}
+        run: echo "CloudBase secrets are not configured. Skipping CloudBase deployment."
+
       - name: Download public artifact
+        if: ${{ env.TCB_SECRET_ID != '' && env.TCB_SECRET_KEY != '' && env.TCB_ENV_ID != '' }}
         uses: actions/download-artifact@v4
         with:
           name: public-site
           path: ./public
 
       - name: Setup Node.js
+        if: ${{ env.TCB_SECRET_ID != '' && env.TCB_SECRET_KEY != '' && env.TCB_ENV_ID != '' }}
         uses: actions/setup-node@v4
         with:
           node-version: 20
 
       - name: Install CloudBase CLI
+        if: ${{ env.TCB_SECRET_ID != '' && env.TCB_SECRET_KEY != '' && env.TCB_ENV_ID != '' }}
         run: npm install -g @cloudbase/cli
 
       - name: Login CloudBase CLI
-        run: tcb login --apiKeyId ${{ secrets.TCB_SECRET_ID }} --apiKey ${{ secrets.TCB_SECRET_KEY }}
+        if: ${{ env.TCB_SECRET_ID != '' && env.TCB_SECRET_KEY != '' && env.TCB_ENV_ID != '' }}
+        run: tcb login --apiKeyId ${{ env.TCB_SECRET_ID }} --apiKey ${{ env.TCB_SECRET_KEY }}
 
       - name: Deploy to CloudBase hosting
-        run: tcb hosting deploy ./public /myblog -e ${{ secrets.TCB_ENV_ID }}
+        if: ${{ env.TCB_SECRET_ID != '' && env.TCB_SECRET_KEY != '' && env.TCB_ENV_ID != '' }}
+        run: tcb hosting deploy ./public /myblog -e ${{ env.TCB_ENV_ID }}
