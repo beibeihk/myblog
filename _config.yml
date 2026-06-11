@@ -101,6 +101,8 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: fluid
+custom_css:
+  - /css/papers.css
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
