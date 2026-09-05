@@ -1,0 +1,4 @@
+# Fluid theme overrides for Huang Kun's academic site.
+custom_css:
+  - /css/papers.css
+  - /css/resume.css

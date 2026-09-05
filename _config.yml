@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Kun Huang(黄坤)'s Space
-subtitle: '摛门不安横，无复相关意。'
-description: 'Wuhan University PhD candidate in Economics'
-keywords:
-author: John Doe
+title: Kun Huang（黄坤）· Academic Lab
+subtitle: 'Public Finance × Causal Inference × AI for Economics'
+description: '黄坤，武汉大学财政学博士生；研究公共经济学、发展经济学、因果推断与人工智能经济学。'
+keywords: 公共经济学, 财政学, 发展经济学, 因果推断, 大语言模型, AI智能体, 黄坤
+author: 黄坤
 language: zh-CN
 timezone: ''
 
@@ -101,8 +101,6 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: fluid
-custom_css:
-  - /css/papers.css
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
