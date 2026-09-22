@@ -2,7 +2,7 @@
 title: 学术简历
 layout: page
 date: 2026-09-05
-updated: 2026-09-05
+updated: 2026-09-23
 comments: false
 ---
 
@@ -112,6 +112,14 @@ comments: false
   <p>研究融合双层强化学习与可玩博弈实验，以真实参与者的避税策略模拟企业避税，并将其置于政企博弈关系中。模拟结果表明，AI 稽查策略在理性代理人环境中优于传统弹性基准；当前正在开展人类被试实验。微信搜索“税课模拟学习工具”即可试玩，也可查看 <a href="https://github.com/beibeihk/tax-case-chronicles">GitHub 项目</a>。</p>
 </div>
 
+### 🧩 其他工作论文
+
+| 平台 / 阶段 | 论文与作者角色 | 内容与状态 |
+|---|---|---|
+| **SSRN** | [**Legislative oversight in the digital age: Online budget supervision reform and state-owned enterprise innovation in China**](https://ssrn.com/abstract=6527221)<br>与刘粲然合作 | 2026 年 4 月发布工作论文，SSRN 6527221。 |
+| **arXiv** | [**Wasserstein Stability and Free Boundaries in Measure-Parameterized Bilevel Obstacle Problems**](https://arxiv.org/abs/2609.08454)<br>**独作** | 2026 年 9 月 8 日发布于 math.OC。研究测度参数双层障碍问题的稳定性，说明征税门槛对企业分布具有 Wasserstein-Lipschitz 稳定性，并给出公司税阈值的解析应用；经 Gerd Wachsmuth 教授和 Amal Alphonse 博士完成 arXiv 背书。 |
+| **AAMAS 2027** | **When Audit Scores Enter the Payoff: A Trace-Backed Diagnostic of Language-Model Choice Boundaries**<br>**独作** | 已投稿 Research Paper Track（Submission ID 112）。研究算法风险评分如何通过税务稽查概率影响智能体的合规激励。 |
+
 ### 🗃️ 数据库与研究基础设施
 
 | 基础设施 | 工具与数据 | 可支持的研究 |
@@ -125,7 +133,7 @@ comments: false
 | 项目 | 技术栈 | 与研究的关系 |
 |---|---|---|
 | [税案异闻录：阴阳账](https://github.com/beibeihk/tax-case-chronicles) | JavaScript / 微信小程序 | 税收遵从、政企博弈与人类被试实验的数据采集工具 |
-| [金税国缘](https://github.com/beibeihk/jinshui-guoyuan) | Godot 4 / GDScript | 行为经济学视角的逃税模拟游戏 |
+| [金税果园](https://github.com/beibeihk/jinshui-guoyuan) | Godot 4 / GDScript | 果园经营、税务申报与概率稽查的税收经营模拟游戏 |
 | [Optimal Corporate Tax China](https://github.com/beibeihk/optimal-corporate-tax-china) | Julia | 含避税行为的中国最优公司税研究与 ARA 协议实现 |
 | [CNKI Journal Filter](https://github.com/beibeihk/cnki-journal-filter) | JavaScript | 按期刊等级筛选知网检索结果的浏览器扩展 |
 | [Jufa Law Crawler](https://github.com/beibeihk/jufa-law-crawler) | Python | 法规批量采集、清洗与 Excel 导出工具 |
@@ -152,6 +160,12 @@ comments: false
 | 湖北省政府专项债券课题合作研究项目（横向课题） | 参与研究 | 承担政府专项债券制度梳理、地方案例搜集与研究脉络整理，并将研究问题转化为“一般债和专项债对比”子课题。 |
 | 校级课题 2 项 | **主持人** | 独立完成选题、文献综述、研究设计、申请书撰写、经费预算及系统填报。 |
 
+### 💡 发明专利申请
+
+| 专利名称 | 发明人及申请信息 | 专利简介 |
+|---|---|---|
+| **一种基于模余状态压缩的税费计算验证方法及系统** | **黄坤，唯一发明人及个人申请人**<br><span class="cv-tag">发明专利 · 申请号 2026113921680</span> | 面向定点金额运算、计算顺序与舍入规则共同引起的税费结果差异，将金额的模余信息、舍入行为与计算阶段编码为有限状态，压缩交易组合空间，并对不同计算路径进行一致性检查。 |
+
 ### 🎤 学术会议与报告
 
 | 年份 | 会议 | 地点 | 参与方式 |
@@ -171,6 +185,16 @@ comments: false
 | **政府咨询** | 《长江中游城市群协调联动发展面临的堵点卡点及对策建议》 | 导师一作、本人三作；获湖北省委采用并批示。 |
 | **智库经历** | 中制智库（北京） | 2021.1–2021.9 联合研究人员，导师为新望；研究制造业企业智能化转型，协助编撰《制造新格局》。 |
 | **实习经历** | 渤海证券总部 | 2021.05–2021.08，市场部、产品部实习生。 |
+
+### 🚀 创业经历
+
+创办一人 AI 公司 **武汉市米火智研科学技术信息研究有限责任公司**，围绕科研信息检索、公共经济学教学和科研日常管理开展数字产品开发；独立推进需求定义、程序实现、发布材料准备与应用平台上架。
+
+| 产品 | 技术与形态 | 功能与上线进展 |
+|---|---|---|
+| [**CNKI Journal Filter**](https://github.com/beibeihk/cnki-journal-filter) | Microsoft Edge / Google Chrome 浏览器插件 | 面向经济学与管理学文献筛选的知网检索辅助工具；已上架 Microsoft Edge 扩展商店，可搜索“CNKI Journal Filter”。 |
+| [**金税果园**](https://github.com/beibeihk/jinshui-guoyuan) | Godot；Windows / Web | 以果园经营、税务申报与概率稽查为核心的策略游戏；已发布于 itch.io，可搜索“Golden Tax Orchard”。 |
+| **学术黄历** | HarmonyOS；ArkTS / ArkUI | 面向科研人员的离线日签与工作台；2026 年 9 月上架华为应用市场，提供科研“宜忌”与学术签、科研计划、专注计时和七日回顾；另开发按学科门类生成专属内容的后续版本。 |
 
 ### 🏅 奖项与证书
 
@@ -199,4 +223,10 @@ comments: false
 | **硕士生课程** | 高级公共经济学、政策评估与因果推断前沿方法、AI 智能体在经济学中的应用 |
 | **博士生课程** | AI 与课题申报自动化、游戏制作与实验经济学、交叉学科 TOP 期刊仿写、AI 时代的团队科研项目管理 |
 
-<p class="cv-note">最后更新：2026-09-05。本页面依据本人当前学术简历整理，联系方式以本页邮箱为准。</p>
+### 📘 教材编写
+
+| 教材 | 编写状态 | 内容与课程设计 |
+|---|---|---|
+| **《公共经济学：理论、证据与中国政策实验》** | 独立编写送审稿 | 借鉴权威公共经济学教材并结合本人研究案例，将中国财税改革和企业行为研究嵌入标准公共经济学框架。附录提供数据与代码使用、实验教学安排、政策文本大语言模型分析流程，并设计 32 学时与 48 学时授课方案，可作为未来《公共经济学》课程的备课基础。 |
+
+<p class="cv-note">最后更新：2026-09-23。本页面依据本人当前学术简历整理，联系方式以本页邮箱为准。</p>
