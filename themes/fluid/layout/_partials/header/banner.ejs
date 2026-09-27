@@ -12,11 +12,11 @@ var labHomeHero = page.lab_home === true
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= parseFloat(banner_mask_alpha) %>)">
       <% if (labHomeHero) { %>
         <div class="lab-hero">
-          <p class="lab-hero-eyebrow">KUN HUANG'S SPACE <span aria-hidden="true">/</span> 武汉 · 日常记录</p>
+          <p class="lab-hero-eyebrow">写于武汉 <span aria-hidden="true">/</span> KUN HUANG'S SPACE</p>
           <h1>黄坤的空间</h1>
           <p class="lab-hero-signature">摛门不安横，无复相关意。</p>
           <p class="lab-hero-lead">写研究，也写研究之外的生活。<br>在真实世界里寻找问题，在字里行间留下自己。</p>
-          <div class="lab-hero-actions"><a class="lab-button lab-button-primary" href="<%= url_for('/archives/') %>">读点文章 <span aria-hidden="true">↗</span></a><a class="lab-button lab-button-ghost" href="<%= url_for('/about/') %>">关于我 <span aria-hidden="true">↗</span></a></div>
+          <div class="lab-hero-actions"><a class="lab-hero-link" href="#lab-writing-title">从最近的文字开始 <span aria-hidden="true">↓</span></a></div>
         </div>
       <% } else { %>
         <div class="banner-text text-center fade-in-up">

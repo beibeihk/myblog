@@ -12,14 +12,17 @@ lazyload:
 favicon: /img/kh-mark.svg
 apple_touch_icon: /img/kh-mark.svg
 
+footer:
+  content: '写于武汉 · 黄坤的空间<br><small>由 <a href="https://hexo.io" target="_blank" rel="nofollow noopener">Hexo</a> 与 <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">Fluid</a> 构建</small>'
+
 navbar:
   blog_title: 黄坤的空间
   menu:
-    - { key: home, name: 首页, link: /, icon: 'iconfont icon-home-fill' }
-    - { key: archive, name: 文章, link: /archives/, icon: 'iconfont icon-archive-fill' }
-    - { key: research, name: 研究成果, link: /research/, icon: 'iconfont icon-category-fill' }
-    - { key: resume, name: 简历, link: /resume/, icon: 'iconfont icon-addrcard' }
-    - { key: about, name: 关于, link: /about/, icon: 'iconfont icon-user-fill' }
+    - { key: home, name: 首页, link: / }
+    - { key: archive, name: 文章, link: /archives/ }
+    - { key: research, name: 研究成果, link: /research/ }
+    - { key: resume, name: 简历, link: /resume/ }
+    - { key: about, name: 关于, link: /about/ }
 
 fun_features:
   typing:
@@ -34,7 +37,7 @@ scroll_down_arrow:
 
 index:
   banner_img: /img/swan_lake.jpg
-  banner_img_height: 74
+  banner_img_height: 70
   banner_mask_alpha: 0
   slogan:
     enable: true
@@ -42,40 +45,40 @@ index:
 
 post:
   banner_img: /img/swan_lake.jpg
-  banner_img_height: 44
+  banner_img_height: 38
   banner_mask_alpha: 0.25
 
 archive:
   banner_img: /img/swan_lake.jpg
-  banner_img_height: 44
+  banner_img_height: 40
 
 about:
   banner_img: /img/swan_lake.jpg
-  banner_img_height: 44
+  banner_img_height: 40
   avatar: /img/dreamer.jpg
   name: Kun Huang（黄坤）
   intro: 双鱼男，INFP
 
 page:
   banner_img: /img/swan_lake.jpg
-  banner_img_height: 44
+  banner_img_height: 40
 
 color:
-  body_bg_color: '#f8f5ee'
-  body_bg_color_dark: '#151b22'
-  navbar_bg_color: '#25303d'
-  navbar_bg_color_dark: '#141a21'
-  board_color: '#ffffff'
-  board_color_dark: '#202a32'
-  text_color: '#27333d'
-  text_color_dark: '#e9e4da'
-  sec_text_color: '#69747c'
-  sec_text_color_dark: '#b6bbb9'
-  post_text_color: '#303941'
-  post_text_color_dark: '#e9e4da'
-  post_heading_color: '#24313a'
-  post_heading_color_dark: '#f5eee0'
-  post_link_color: '#287e84'
-  post_link_color_dark: '#8bc8bf'
-  link_hover_color: '#b27352'
-  link_hover_color_dark: '#dca782'
+  body_bg_color: '#f5f1e8'
+  body_bg_color_dark: '#172129'
+  navbar_bg_color: '#192631'
+  navbar_bg_color_dark: '#141d24'
+  board_color: '#fffdfa'
+  board_color_dark: '#222d33'
+  text_color: '#28343a'
+  text_color_dark: '#eae4d8'
+  sec_text_color: '#657077'
+  sec_text_color_dark: '#b7bdbb'
+  post_text_color: '#28343a'
+  post_text_color_dark: '#eae4d8'
+  post_heading_color: '#26343a'
+  post_heading_color_dark: '#f0e9db'
+  post_link_color: '#2b7778'
+  post_link_color_dark: '#8fc5bf'
+  link_hover_color: '#995f45'
+  link_hover_color_dark: '#dea586'

@@ -8,11 +8,11 @@ page.banner_mask_alpha = firstPage ? theme.index.banner_mask_alpha : 0.2
 page.subtitle = firstPage ? config.subtitle : '文章'
 %>
 
-<div id="lab-home" class="lab-home">
+<div id="lab-home" class="lab-home <%= firstPage ? 'lab-home-first' : 'lab-home-archive' %>">
   <% if (firstPage) { %>
-    <section class="lab-section lab-introduction lab-reveal" aria-labelledby="lab-intro-title">
+    <section class="lab-introduction" aria-labelledby="lab-intro-title">
       <div class="lab-intro-copy">
-        <p class="lab-eyebrow">A SMALL CORNER OF THE INTERNET · 个人博客</p>
+        <p class="lab-eyebrow">关于这个角落 <span aria-hidden="true">/</span> ABOUT</p>
         <h2 id="lab-intro-title">你好，我是黄坤。</h2>
         <p>在武汉读财政学博士，也喜欢把读到的、想到的和经历过的事写下来。这里有论文与方法，也会有书、城市、游戏和生活。</p>
         <p class="lab-intro-english" lang="en">Research, essays, and fragments of everyday life — written from Wuhan.</p>
@@ -20,42 +20,54 @@ page.subtitle = firstPage ? config.subtitle : '文章'
       </div>
       <a class="lab-intro-portrait" href="<%= url_for('/about/') %>" aria-label="进一步认识黄坤"><img src="<%= url_for('/img/dreamer.jpg') %>" alt="黄坤原有博客头像：电影《白日梦想家》画面" loading="eager"><span>关于我 <span aria-hidden="true">↗</span></span></a>
     </section>
+  <% } %>
 
-    <section class="lab-section lab-reveal" aria-label="探索这个博客">
-      <div class="lab-section-heading"><div><p class="lab-eyebrow">FIND YOUR WAY</p><h2>从这里开始</h2></div></div>
-      <div class="lab-doors">
-        <a class="lab-door" href="<%= url_for('/archives/') %>"><span class="lab-door-no">01 / JOURNAL</span><h3>文章</h3><p>研究札记，也有学术之外的自由表达。</p><span class="lab-door-arrow" aria-hidden="true">↗</span></a>
-        <a class="lab-door" href="<%= url_for('/research/') %>"><span class="lab-door-no">02 / RESEARCH</span><h3>研究成果</h3><p>已发表论文与正在进行的研究。</p><span class="lab-door-arrow" aria-hidden="true">↗</span></a>
-        <a class="lab-door" href="<%= url_for('/resume/') %>"><span class="lab-door-no">03 / ACADEMIC CV</span><h3>学术简历</h3><p>教育经历、研究项目与其他学术工作。</p><span class="lab-door-arrow" aria-hidden="true">↗</span></a>
+  <div class="lab-editorial-grid">
+    <section class="lab-writing" aria-labelledby="lab-writing-title">
+      <div class="lab-section-heading">
+        <div>
+          <p class="lab-eyebrow"><%= firstPage ? '最近的文字 / JOURNAL' : '文章目录 / ARCHIVE' %></p>
+          <h2 id="lab-writing-title"><%= firstPage ? '最近写下的' : '文章' %></h2>
+          <p>研究札记、阅读与日常，按写下的时间排在一起。</p>
+        </div>
+        <% if (firstPage) { %><a class="lab-text-link" href="<%= url_for('/archives/') %>">全部文章 <span aria-hidden="true">↗</span></a><% } %>
       </div>
+      <ol class="lab-article-list">
+        <% page.posts.each(function (post) { %>
+          <% var summary = post.summary || post.description || post.excerpt || post.content || '' %>
+          <li>
+            <article class="lab-article-entry">
+              <time class="lab-article-date" datetime="<%= full_date(post.date, 'YYYY-MM-DD') %>"><%= date(post.date, 'YYYY.MM.DD') %></time>
+              <div class="lab-article-copy">
+                <h3><a href="<%= url_for(post.path) %>"><%= post.title %></a></h3>
+                <p><%= strip_html(summary).substring(0, 150).trim().replace(/\n/g, ' ') %></p>
+                <a class="lab-entry-link" href="<%= url_for(post.path) %>">读这篇文章 <span aria-hidden="true">↗</span></a>
+              </div>
+            </article>
+          </li>
+        <% }) %>
+      </ol>
+      <% if (firstPage) { %><a class="lab-all-writing" href="<%= url_for('/archives/') %>">继续翻阅文章目录 <span aria-hidden="true">→</span></a><% } %>
     </section>
-  <% } %>
 
-  <section class="lab-section lab-writing lab-reveal" aria-labelledby="lab-writing-title">
-    <div class="lab-section-heading">
-      <div><p class="lab-eyebrow">NOTES & STORIES</p><h2 id="lab-writing-title"><%= firstPage ? '最近写下的' : '文章' %></h2><p>所有文章都在这里，不按学术与生活划线。</p></div>
-      <% if (firstPage) { %><a class="lab-text-link" href="<%= url_for('/archives/') %>">全部文章 <span aria-hidden="true">↗</span></a><% } %>
-    </div>
-    <div class="lab-article-list">
-      <% page.posts.each(function (post) { %>
-        <% var summary = post.summary || post.description || post.excerpt || post.content || '' %>
-        <article class="lab-article-card">
-          <div class="lab-article-meta"><time datetime="<%= full_date(post.date, 'YYYY-MM-DD') %>"><%= date(post.date, 'YYYY-MM-DD') %></time><span aria-hidden="true">/</span><span>文章</span></div>
-          <h3><a href="<%= url_for(post.path) %>"><%= post.title %></a></h3>
-          <p><%= strip_html(summary).substring(0, 165).trim().replace(/\n/g, ' ') %></p>
-          <a class="lab-text-link" href="<%= url_for(post.path) %>">阅读全文 <span aria-hidden="true">↗</span></a>
-        </article>
-      <% }) %>
-    </div>
-  </section>
-
-  <% if (firstPage) { %>
-    <aside class="lab-letter lab-reveal" aria-label="给读者的一句话">
-      <p class="lab-eyebrow">A NOTE TO THE READER</p>
-      <p>有些问题值得写成论文，有些只适合留在一篇随笔里。这里都欢迎。</p>
-      <a href="<%= url_for('/about/') %>">再认识我一点 <span aria-hidden="true">↗</span></a>
-    </aside>
-  <% } %>
+    <% if (firstPage) { %>
+      <aside class="lab-side-notes" aria-label="博客其他入口">
+        <div class="lab-side-note">
+          <p class="lab-eyebrow">另一些线索</p>
+          <p>写在博客里的文章，与正式的研究成果各有自己的位置。</p>
+          <nav aria-label="研究与简历">
+            <a href="<%= url_for('/research/') %>"><span>研究成果</span><span aria-hidden="true">↗</span></a>
+            <a href="<%= url_for('/resume/') %>"><span>学术简历</span><span aria-hidden="true">↗</span></a>
+          </nav>
+        </div>
+        <div class="lab-side-letter">
+          <p class="lab-eyebrow">写给读者</p>
+          <blockquote>有些问题值得写成论文，有些只适合留在一篇随笔里。这里都欢迎。</blockquote>
+          <a href="<%= url_for('/about/') %>">再认识我一点 <span aria-hidden="true">↗</span></a>
+        </div>
+      </aside>
+    <% } %>
+  </div>
 
   <%- partial('_partials/paginator') %>
 </div>

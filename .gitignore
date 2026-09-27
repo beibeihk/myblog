@@ -7,5 +7,6 @@ public/
 .deploy*/
 _multiconfig.yml
 .wrangler/
+.playwright-cli/
 workers-site/
 run-*-logs.zip
