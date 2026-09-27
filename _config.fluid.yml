@@ -4,9 +4,6 @@ custom_css:
   - /css/resume.css
   - /css/lab.css
 
-custom_js:
-  - /js/lab.js
-
 # Keep the personal avatar visible immediately; post images remain lazy loaded.
 lazyload:
   enable: true
