@@ -1,66 +1,95 @@
 <%
-if (theme.index.slogan.enable) {
-  page.subtitle = theme.index.slogan.text || config.subtitle || ''
-}
+var firstPage = (page.current || 1) === 1
+page.lab_home = firstPage
+page.lab_wide = true
 page.banner_img = theme.index.banner_img
-page.banner_img_height = theme.index.banner_img_height
-page.banner_mask_alpha = theme.index.banner_mask_alpha
+page.banner_img_height = firstPage ? theme.index.banner_img_height : 44
+page.banner_mask_alpha = firstPage ? theme.index.banner_mask_alpha : 0.2
+page.subtitle = firstPage ? config.subtitle : '文章'
+var publications = site.data.publications || []
 %>
 
-<h1 style="display: none"><%= config.title %></h1>
-<% page.posts.each(function (post) { %>
-  <div class="row mx-auto index-card">
-    <% var post_url = url_for(post.path), index_img = post.index_img || theme.post.default_index_img %>
-    <% if (index_img) { %>
-      <div class="col-12 col-md-4 m-auto index-img">
-        <a href="<%= post_url %>" target="<%- theme.index.post_url_target %>">
-          <img src="<%= url_for(index_img) %>" alt="<%= post.title %>">
-        </a>
-      </div>
-    <% } %>
-    <article class="col-12 col-md-<%= index_img ? '8' : '12' %> mx-auto index-info">
-      <h2 class="index-header">
-        <% if (theme.index.post_sticky && theme.index.post_sticky.enable && post.sticky > 0) { %>
-          <i class="index-pin <%= theme.index.post_sticky && theme.index.post_sticky.icon %>" title="Pin on top"></i>
-        <% } %>
-        <a href="<%= post_url %>" target="<%- theme.index.post_url_target %>">
-          <%= post.title %>
-        </a>
-      </h2>
-
-      <% var excerpt = post.description || post.excerpt || (theme.index.auto_excerpt.enable && !post.encrypt && post.content) %>
-      <a class="index-excerpt <%= index_img ? '' : 'index-excerpt__noimg' %>" href="<%= post_url %>" target="<%- theme.index.post_url_target %>">
+<div id="lab-home" class="lab-home">
+  <% if (firstPage) { %>
+    <section class="lab-section lab-introduction lab-reveal" aria-labelledby="lab-intro-title">
+      <p class="lab-eyebrow">THE RESEARCH STUDIO</p>
+      <div class="lab-section-heading">
         <div>
-          <%- strip_html(excerpt).substring(0, 200).trim().replace(/\n/g, ' ') %>
+          <h2 id="lab-intro-title">用严谨的方法，研究真实的制度问题。</h2>
+          <p>从税收征管和企业行为出发，连接政策评估、实验方法与人工智能。</p>
         </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        <% if (theme.index.post_meta.date) { %>
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="<%= full_date(post.date, 'YYYY-MM-DD HH:mm') %>" pubdate>
-              <%- date(post.date, config.date_format) %>
-            </time>
-          </div>
-        <% } %>
-        <% if (theme.index.post_meta.category && post.categories.length > 0) { %>
-          <div class="post-meta mr-3 d-flex align-items-center">
-            <i class="iconfont icon-category"></i>
-            <%- partial('_partials/category-chains', { categories: post.categories, limit: 1 }) %>
-          </div>
-        <% } %>
-        <% if (theme.index.post_meta.tag && post.tags.length > 0) { %>
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            <% post.tags.each(function(tag){ %>
-              <a href="<%= url_for(tag.path) %>">#<%- tag.name %></a>
-            <% }) %>
-          </div>
-        <% } %>
+        <a class="lab-text-link" href="<%= url_for('/about/') %>">认识我 <span aria-hidden="true">↗</span></a>
       </div>
-    </article>
-  </div>
-<% }) %>
+      <div class="lab-track-grid">
+        <article class="lab-track-card">
+          <span class="lab-track-number">01 / PUBLIC FINANCE</span>
+          <h3>公共财政与税收治理</h3>
+          <p>关注税收征管、税收遵从与企业对政策激励的反应。</p>
+        </article>
+        <article class="lab-track-card">
+          <span class="lab-track-number">02 / CAUSAL INFERENCE</span>
+          <h3>因果推断与政策评估</h3>
+          <p>结合准实验设计、实验方法与机器学习，识别政策效果。</p>
+        </article>
+        <article class="lab-track-card">
+          <span class="lab-track-number">03 / AI FOR ECONOMICS</span>
+          <h3>人工智能与经济学</h3>
+          <p>探索大语言模型、智能体与计算实验在经济研究中的应用。</p>
+        </article>
+      </div>
+    </section>
 
-<%- partial('_partials/paginator') %>
+    <section class="lab-section lab-reveal" aria-labelledby="lab-featured-title">
+      <p class="lab-eyebrow">SELECTED WORK</p>
+      <div class="lab-section-heading">
+        <div>
+          <h2 id="lab-featured-title">精选研究</h2>
+          <p>从现有论文目录选取的代表性主题。</p>
+        </div>
+        <a class="lab-text-link" href="<%= url_for('/research/') %>">全部研究成果 <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="lab-publication-grid">
+        <% publications.slice(0, 3).forEach(function (item, index) { %>
+          <article class="lab-publication-card">
+            <span class="lab-card-index"><%= String(index + 1).padStart(2, '0') %></span>
+            <p class="lab-publication-venue"><%= item.venue %></p>
+            <h3><%= item.title %></h3>
+            <% if (item.year) { %><p class="lab-publication-year"><%= item.year %></p><% } %>
+            <% if (item.url || item.doi || item.pdf) { %><a href="<%= item.url || (item.doi && 'https://doi.org/' + item.doi) || url_for(item.pdf) %>" class="lab-card-link">查看论文 <span aria-hidden="true">↗</span></a><% } %>
+          </article>
+        <% }) %>
+      </div>
+    </section>
+  <% } %>
+
+  <section class="lab-section lab-writing lab-reveal" aria-labelledby="lab-writing-title">
+    <p class="lab-eyebrow">FIELD NOTES</p>
+    <div class="lab-section-heading">
+      <div>
+        <h2 id="lab-writing-title"><%= firstPage ? '近期文章与研究档案' : '文章' %></h2>
+        <p>研究札记、方法与公开资料。</p>
+      </div>
+      <% if (firstPage) { %><a class="lab-text-link" href="<%= url_for('/archives/') %>">文章归档 <span aria-hidden="true">↗</span></a><% } %>
+    </div>
+    <div class="lab-article-list">
+      <% page.posts.each(function (post) { %>
+        <% var summary = post.summary || post.description || post.excerpt || post.content || '' %>
+        <article class="lab-article-card">
+          <div class="lab-article-meta"><time datetime="<%= full_date(post.date, 'YYYY-MM-DD') %>"><%= date(post.date, 'YYYY-MM-DD') %></time><span aria-hidden="true">·</span><span>研究文章</span></div>
+          <h3><a href="<%= url_for(post.path) %>"><%= post.title %></a></h3>
+          <p><%= strip_html(summary).substring(0, 165).trim().replace(/\n/g, ' ') %></p>
+          <a class="lab-text-link" href="<%= url_for(post.path) %>">阅读文章 <span aria-hidden="true">↗</span></a>
+        </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <% if (firstPage) { %>
+    <section class="lab-contact-band lab-reveal" aria-label="联系与简历">
+      <div><p class="lab-eyebrow">LET'S CONNECT</p><h2>让研究对话继续。</h2><p>欢迎就公共财政、因果推断与人工智能经济学交流。</p></div>
+      <div class="lab-contact-actions"><a class="lab-button lab-button-light" href="<%= url_for('/resume/') %>">查看学术简历</a><a class="lab-button lab-button-outline" href="mailto:huangkun123huang@163.com">邮件联系</a></div>
+    </section>
+  <% } %>
+
+  <%- partial('_partials/paginator') %>
+</div>

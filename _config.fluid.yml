@@ -2,3 +2,77 @@
 custom_css:
   - /css/papers.css
   - /css/resume.css
+  - /css/lab.css
+
+custom_js:
+  - /js/lab.js
+
+favicon: /img/kh-mark.svg
+apple_touch_icon: /img/kh-mark.svg
+
+navbar:
+  blog_title: 黄坤 · Academic Lab
+  menu:
+    - { key: home, name: 首页, link: /, icon: 'iconfont icon-home-fill' }
+    - { key: research, name: 研究成果, link: /research/, icon: 'iconfont icon-category-fill' }
+    - { key: archive, name: 文章, link: /archives/, icon: 'iconfont icon-archive-fill' }
+    - { key: resume, name: 简历, link: /resume/, icon: 'iconfont icon-addrcard' }
+    - { key: about, name: 关于, link: /about/, icon: 'iconfont icon-user-fill' }
+
+fun_features:
+  typing:
+    enable: false
+
+banner:
+  parallax: false
+  width_height_ratio: 0
+
+scroll_down_arrow:
+  enable: false
+
+index:
+  banner_img: /img/research-hero.svg
+  banner_img_height: 78
+  banner_mask_alpha: 0
+  slogan:
+    enable: false
+
+post:
+  banner_img: /img/research-hero.svg
+  banner_img_height: 44
+  banner_mask_alpha: 0.25
+
+archive:
+  banner_img: /img/research-hero.svg
+  banner_img_height: 44
+
+about:
+  banner_img: /img/research-hero.svg
+  banner_img_height: 44
+  avatar: /img/kh-avatar.svg
+  name: 黄坤 · Kun Huang
+  intro: 公共财政与发展经济学研究者
+
+page:
+  banner_img: /img/research-hero.svg
+  banner_img_height: 44
+
+color:
+  body_bg_color: '#f5f7fb'
+  body_bg_color_dark: '#0b1220'
+  navbar_bg_color: '#10283b'
+  navbar_bg_color_dark: '#0b1725'
+  board_color: '#ffffff'
+  board_color_dark: '#142033'
+  text_color: '#17263c'
+  text_color_dark: '#e7f0f7'
+  sec_text_color: '#5b6d82'
+  sec_text_color_dark: '#adbfce'
+  post_text_color: '#24364d'
+  post_text_color_dark: '#d9e7f0'
+  post_heading_color: '#12263a'
+  post_heading_color_dark: '#f2f7fa'
+  post_link_color: '#147d83'
+  post_link_color_dark: '#65d7ce'
+  link_hover_color: '#0caaa1'
+  link_hover_color_dark: '#83ede1'

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="抽象研究网络背景">
+  <defs>
+    <linearGradient id="night" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071827"/><stop offset=".55" stop-color="#12384a"/><stop offset="1" stop-color="#0a1b32"/></linearGradient>
+    <radialGradient id="aura"><stop stop-color="#1c9d9d" stop-opacity=".5"/><stop offset="1" stop-color="#1c9d9d" stop-opacity="0"/></radialGradient>
+    <radialGradient id="aura2"><stop stop-color="#5376c8" stop-opacity=".38"/><stop offset="1" stop-color="#5376c8" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#a9e6e2" stroke-opacity=".08"/></pattern>
+    <linearGradient id="line" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#4ed3c6" stop-opacity="0"/><stop offset=".55" stop-color="#4ed3c6" stop-opacity=".7"/><stop offset="1" stop-color="#8aa4ff" stop-opacity=".18"/></linearGradient>
+  </defs>
+  <path fill="url(#night)" d="M0 0h1600v900H0z"/>
+  <circle cx="1170" cy="370" r="500" fill="url(#aura)"/><circle cx="700" cy="900" r="560" fill="url(#aura2)"/>
+  <path fill="url(#grid)" d="M0 0h1600v900H0z"/>
+  <g fill="none" stroke="#82dbd4" stroke-opacity=".16"><circle cx="1180" cy="448" r="305"/><circle cx="1180" cy="448" r="226"/><circle cx="1180" cy="448" r="145"/><path d="M1180 70v755M790 448h795M905 174l557 549M1445 175L900 720"/></g>
+  <g fill="none" stroke="url(#line)" stroke-width="2"><path d="M220 705C470 650 660 760 890 602S1270 375 1505 304"/><path d="M390 350C570 380 650 520 855 485S1230 535 1490 660"/><path d="M730 780C890 695 1025 660 1130 445S1345 195 1540 155"/></g>
+  <g fill="#8ce9df"><circle cx="890" cy="602" r="6"/><circle cx="1130" cy="445" r="7"/><circle cx="1308" cy="395" r="5"/><circle cx="855" cy="485" r="4"/><circle cx="1450" cy="630" r="5"/><circle cx="1179" cy="448" r="9"/></g>
+  <g fill="#a3b6ff"><circle cx="730" cy="780" r="4"/><circle cx="1020" cy="580" r="5"/><circle cx="1505" cy="304" r="4"/></g>
+</svg>

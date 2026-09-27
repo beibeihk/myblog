@@ -3,25 +3,33 @@ var banner_img = page.banner_img || theme.index.banner_img
 var banner_img_height = parseFloat(page.banner_img_height || theme.index.banner_img_height)
 var banner_mask_alpha = parseFloat(page.banner_mask_alpha || theme.index.banner_mask_alpha)
 var subtitle = page.subtitle || page.title
+var labHomeHero = page.lab_home === true
 %>
 
-<div id="banner" class="banner" <%- theme.banner && theme.banner.parallax && 'parallax=true' %>
+<div id="banner" class="banner <%= labHomeHero ? 'lab-banner-home' : 'lab-banner-inner' %>" <%- theme.banner && theme.banner.parallax ? 'parallax="true"' : '' %>
      style="background: url('<%- url_for(banner_img) %>') no-repeat center center; background-size: cover;">
   <div class="full-bg-img">
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= parseFloat(banner_mask_alpha) %>)">
-      <div class="banner-text text-center fade-in-up">
-        <div class="h2">
-          <% if(theme.fun_features.typing.enable && in_scope(theme.fun_features.typing.scope)) { %>
-            <span id="subtitle" data-typed-text="<%= subtitle %>"></span>
-          <% } else { %>
-            <span id="subtitle"><%- subtitle %></span>
-          <% } %>
+      <% if (labHomeHero) { %>
+        <div class="lab-hero">
+          <p class="lab-hero-eyebrow"><span class="lab-status-dot" aria-hidden="true"></span> WUHAN UNIVERSITY · PUBLIC FINANCE</p>
+          <h1>黄坤 <span>Kun Huang</span></h1>
+          <p class="lab-hero-lead">以公共财政为起点，<br>探索政策、企业与智能技术的交汇处。</p>
+          <p class="lab-hero-english" lang="en">Public Finance <span>×</span> Causal Inference <span>×</span> AI for Economics</p>
+          <div class="lab-hero-actions"><a class="lab-button lab-button-primary" href="<%= url_for('/research/') %>">探索研究成果 <span aria-hidden="true">↗</span></a><a class="lab-button lab-button-ghost" href="<%= url_for('/archives/') %>">阅读文章 <span aria-hidden="true">↓</span></a></div>
         </div>
-
-        <% if (is_post()) { %>
-          <%- inject_point('postMetaTop') %>
-        <% } %>
-      </div>
+      <% } else { %>
+        <div class="banner-text text-center fade-in-up">
+          <div class="h2">
+            <% if(theme.fun_features.typing.enable && in_scope(theme.fun_features.typing.scope)) { %>
+              <span id="subtitle" data-typed-text="<%= subtitle %>"></span>
+            <% } else { %>
+              <span id="subtitle"><%- subtitle %></span>
+            <% } %>
+          </div>
+          <% if (is_post()) { %><%- inject_point('postMetaTop') %><% } %>
+        </div>
+      <% } %>
 
       <% if (theme.scroll_down_arrow.enable && theme.scroll_down_arrow.banner_height_limit <= banner_img_height && page.layout !== '404') { %>
         <div class="scroll-down-bar">
