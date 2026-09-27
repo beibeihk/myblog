@@ -7,44 +7,30 @@ page.banner_img = theme.page.banner_img
 page.banner_img_height = theme.page.banner_img_height
 page.banner_mask_alpha = theme.page.banner_mask_alpha
 var publications = site.data.publications || []
-var archivePosts = site.posts.toArray().filter(function (post) {
-  return post.tags && post.tags.toArray().some(function (tag) { return tag.name === '论文归档' })
-})
 %>
 
 <div class="lab-research-page">
-  <div class="lab-research-intro">
-    <p class="lab-eyebrow">RESEARCH &amp; WRITING</p>
-    <h1>论文与研究档案</h1>
-    <p>研究聚焦公共财政、发展经济学与政策评估，并尝试将人工智能方法用于经济学问题。以下题名与刊物整理自本站此前公开的论文清单；未列出的书目信息留待核实。</p>
-  </div>
+  <header class="lab-research-intro">
+    <p class="lab-eyebrow">RESEARCH / PUBLICATIONS</p>
+    <h1>研究成果</h1>
+    <p>以公共经济学和发展经济学为主线，关注税收征管、企业行为与政策评估。这里单独收录论文；博客文章请到<a href="<%= url_for('/archives/') %>">文章</a>栏目阅读。</p>
+  </header>
 
   <section class="lab-section" aria-labelledby="lab-papers-title">
-    <div class="lab-section-heading"><div><p class="lab-eyebrow">PUBLICATIONS</p><h2 id="lab-papers-title">论文清单</h2></div><span class="lab-count"><%= publications.length %> 篇</span></div>
+    <div class="lab-section-heading"><div><p class="lab-eyebrow">PUBLISHED WORK</p><h2 id="lab-papers-title">已发表论文</h2></div><span class="lab-count"><%= publications.length %> 篇</span></div>
     <ol class="lab-research-list">
       <% publications.forEach(function (item, index) { %>
         <li class="lab-research-item">
           <span class="lab-research-number"><%= String(index + 1).padStart(2, '0') %></span>
           <div>
             <h3><%= item.title %></h3>
-            <p><%= item.venue %><% if (item.year) { %> · <%= item.year %><% } %><% if (item.authors) { %> · <%= item.authors %><% } %></p>
+            <p class="lab-research-meta"><%= item.venue %><% if (item.year) { %> · <%= item.year %><% } %></p>
+            <% if (item.authors) { %><p class="lab-research-authors"><%= item.authors %></p><% } %>
             <% if (item.url || item.doi || item.pdf) { %><a class="lab-text-link" href="<%= item.url || (item.doi && 'https://doi.org/' + item.doi) || url_for(item.pdf) %>">论文链接 <span aria-hidden="true">↗</span></a><% } %>
           </div>
         </li>
       <% }) %>
     </ol>
   </section>
-
-  <% if (archivePosts.length) { %>
-    <section class="lab-section" aria-labelledby="lab-archive-title">
-      <div class="lab-section-heading"><div><p class="lab-eyebrow">RESEARCH ARCHIVE</p><h2 id="lab-archive-title">研究档案</h2><p>以下页面提供文章简介及 PDF 下载入口。</p></div></div>
-      <div class="lab-archive-grid">
-        <% archivePosts.forEach(function (post) { %>
-          <article class="lab-archive-card"><p class="lab-publication-venue"><%= date(post.date, 'YYYY-MM-DD') %></p><h3><a href="<%= url_for(post.path) %>"><%= post.title %></a></h3><a class="lab-text-link" href="<%= url_for(post.path) %>">阅读与下载 <span aria-hidden="true">↗</span></a></article>
-        <% }) %>
-      </div>
-    </section>
-  <% } %>
-
-  <p class="lab-research-footnote">更多经历和项目参与情况见 <a href="<%= url_for('/resume/') %>">学术简历</a>。</p>
+  <p class="lab-research-footnote">在投论文、工作论文及项目经历见<a href="<%= url_for('/resume/') %>">学术简历</a>。文献与生活随笔均留在<a href="<%= url_for('/archives/') %>">文章归档</a>，不会自动并入研究成果。</p>
 </div>

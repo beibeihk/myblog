@@ -1,24 +1,49 @@
-# 仅收录原“关于”页已经公开的论文题名与刊物；缺失的书目信息不推测。
-# 可选字段：authors、year、doi、url、pdf；只有核实后才添加。
-- title: 减税激励与企业劳动收入份额——基于Bunching-DiD方法的实证分析
-  venue: 系统工程理论与实践
-- title: 'Green Credit’s Fiscal Dividend: Evidence from Corporate Tax Revenues in China'
-  venue: Finance Research Letters
-- title: 环境规制的隐性税收成本：来自中国环保重点城市政策的证据
-  venue: 广西大学学报（哲学社会科学版）
-- title: 财政管理体制与中国地方公共服务均衡保障：研究状况及未来展望
-  venue: 技术经济
-- title: 地方政府激励企业关键数字技术创新：空间距离视角
-  venue: 财政科学
-- title: 绩效考核改革、政府竞争与民生性公共服务质量
-  venue: 北京工商大学学报（社会科学版）
-- title: 地方政府债务管理体制改革与企业ESG表现——基于双重机器学习模型的因果推断
-  venue: 财经问题研究
-- title: 数字经济、市场潜能与乡村振兴——基于双重机器学习模型的因果推断
-  venue: 山西财经大学学报
-- title: 交通基础设施升级与旅游经济高质量发展——基于高铁开通的实证研究
-  venue: 经济学报
-- title: 红色传统文化的治税效应——来自爱国主义教育基地的准自然实验证据
-  venue: 江南大学学报（人文社会科学版）
-- title: 共同富裕目标下地级市公共服务成本差异测度与分析
-  venue: 管理现代化
+# 依据 2026-09-23 学术简历中的已发表论文表；文章存放在 _posts，不并入此清单。
+- title: "减税激励与企业劳动收入份额：基于Bunching-DiD方法的实证分析"
+  venue: "《系统工程理论与实践》"
+  year: "2025年"
+  authors: "卢盛峰；顾月梅；黄坤*；马重；王怡迪"
+- title: "政府规制政策何以促进新兴产业发展？以新能源汽车为例"
+  venue: "《数量经济技术经济研究》"
+  year: "2026年"
+  authors: "行伟波；田坤*；黄坤；石光"
+- title: "Green Credit's Fiscal Dividend: Evidence from Corporate Tax Revenues in China"
+  venue: "Finance Research Letters"
+  year: "online 2025"
+  authors: "Li Quan; Jiang Hexin; Siyao Yang; Tian Kun; Huang Kun*; Xinyu Xiong"
+- title: "环境规制的隐性税收成本：来自中国环保重点城市政策的证据"
+  venue: "《广西大学学报（哲学社会科学版）》"
+  year: "2025年"
+  authors: "卢盛峰；黄坤*"
+- title: "财政管理体制与中国地方公共服务均衡保障：研究状况及未来展望"
+  venue: "《技术经济》"
+  year: "2025年"
+  authors: "卢盛峰；黄坤*"
+- title: "地方政府激励企业关键数字技术创新：空间距离视角"
+  venue: "《财政科学》"
+  year: "2025年"
+  authors: "卢盛峰；马重；黄坤*"
+- title: "绩效考核改革、政府竞争与民生性公共服务质量"
+  venue: "《北京工商大学学报（社会科学版）》"
+  year: "2025年"
+  authors: "吴强；黄坤；许敬轩*"
+- title: "地方政府债务管理体制改革与企业ESG表现：基于双重机器学习模型的因果推断"
+  venue: "《财经问题研究》"
+  year: "2024年"
+  authors: "卢盛峰；郭珈汝；黄坤*"
+- title: "数字经济、市场潜能与乡村振兴：基于双重机器学习的因果推断"
+  venue: "《山西财经大学学报》"
+  year: "2023年"
+  authors: "田坤；黄坤；行伟波*"
+- title: "交通基础设施升级与旅游经济高质量发展：基于高铁开通的实证研究"
+  venue: "《经济学报》"
+  year: "2022年"
+  authors: "田坤；行伟波；黄坤*"
+- title: "红色传统文化的治税效应：来自爱国主义教育示范基地的准自然实验证据"
+  venue: "《江南大学学报（人文社会科学版）》"
+  year: "2025年"
+  authors: "卢盛峰；曹艺震；黄坤*"
+- title: "共同富裕目标下地级市公共服务成本差异测度与分析"
+  venue: "《管理现代化》"
+  year: "2022年"
+  authors: "吴强；黄坤；叶意雯*；吴浩然"

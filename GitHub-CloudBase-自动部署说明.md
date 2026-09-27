@@ -49,7 +49,7 @@
 - 新建一个环境
 - 开通静态网站托管
 
-免费版默认域名更适合个人副本和测试，不适合高流量正式站点。
+CloudBase 默认域名仅供开发与测试；对外长期提供博客时，需要绑定自有域名，并按托管节点及腾讯云要求完成备案。
 
 ### 2. 申请云 API 密钥
 
@@ -120,7 +120,7 @@ npm run deploy
 npm run publish:hint
 ```
 
-## 你最终会有两个地址
+## 配置自有域名后会有两个地址
 
 GitHub Pages：
 
@@ -128,10 +128,10 @@ GitHub Pages：
 https://beibeihk.github.io/myblog/
 ```
 
-CloudBase：
+CloudBase（示意，以备案且绑定的实际域名为准）：
 
 ```text
-https://你的默认域名/myblog/
+https://blog.你的域名/myblog/
 ```
 
 ## 如果你的仓库名不是 `myblog`

@@ -12,11 +12,11 @@ var labHomeHero = page.lab_home === true
     <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= parseFloat(banner_mask_alpha) %>)">
       <% if (labHomeHero) { %>
         <div class="lab-hero">
-          <p class="lab-hero-eyebrow"><span class="lab-status-dot" aria-hidden="true"></span> WUHAN UNIVERSITY · PUBLIC FINANCE</p>
-          <h1>黄坤 <span>Kun Huang</span></h1>
-          <p class="lab-hero-lead">以公共财政为起点，<br>探索政策、企业与智能技术的交汇处。</p>
-          <p class="lab-hero-english" lang="en">Public Finance <span>×</span> Causal Inference <span>×</span> AI for Economics</p>
-          <div class="lab-hero-actions"><a class="lab-button lab-button-primary" href="<%= url_for('/research/') %>">探索研究成果 <span aria-hidden="true">↗</span></a><a class="lab-button lab-button-ghost" href="<%= url_for('/archives/') %>">阅读文章 <span aria-hidden="true">↓</span></a></div>
+          <p class="lab-hero-eyebrow">KUN HUANG'S SPACE <span aria-hidden="true">/</span> 武汉 · 日常记录</p>
+          <h1>黄坤的空间</h1>
+          <p class="lab-hero-signature">摛门不安横，无复相关意。</p>
+          <p class="lab-hero-lead">写研究，也写研究之外的生活。<br>在真实世界里寻找问题，在字里行间留下自己。</p>
+          <div class="lab-hero-actions"><a class="lab-button lab-button-primary" href="<%= url_for('/archives/') %>">读点文章 <span aria-hidden="true">↗</span></a><a class="lab-button lab-button-ghost" href="<%= url_for('/about/') %>">关于我 <span aria-hidden="true">↗</span></a></div>
         </div>
       <% } else { %>
         <div class="banner-text text-center fade-in-up">

@@ -2,7 +2,7 @@
 title: 学术简历
 layout: page
 date: 2026-09-05
-updated: 2026-09-23
+updated: 2026-09-27
 comments: false
 ---
 
@@ -14,6 +14,7 @@ comments: false
     <a href="mailto:huangkun123huang@163.com">✉️ 电子邮箱</a>
     <a href="https://github.com/beibeihk">💻 GitHub</a>
     <a href="/myblog/">🧭 个人博客</a>
+    <a href="/myblog/research/">📚 已发表论文</a>
   </div>
 </div>
 
@@ -229,4 +230,4 @@ comments: false
 |---|---|---|
 | **《公共经济学：理论、证据与中国政策实验》** | 独立编写送审稿 | 借鉴权威公共经济学教材并结合本人研究案例，将中国财税改革和企业行为研究嵌入标准公共经济学框架。附录提供数据与代码使用、实验教学安排、政策文本大语言模型分析流程，并设计 32 学时与 48 学时授课方案，可作为未来《公共经济学》课程的备课基础。 |
 
-<p class="cv-note">最后更新：2026-09-23。本页面依据本人当前学术简历整理，联系方式以本页邮箱为准。</p>
+<p class="cv-note">最后核对：2026-09-27（依据 2026-09-23 版学术简历）。如需完整简历，请通过本页邮箱联系。</p>
