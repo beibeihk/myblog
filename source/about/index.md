@@ -19,7 +19,7 @@ I am Kun Huang, a PhD candidate in Public Finance at Wuhan University. This is m
 - **因果推断与政策评估**：准实验设计、机器学习辅助估计与实验方法。
 - **人工智能与经济学**：大语言模型、智能体和计算实验在经济研究中的应用。
 
-已发表论文见[研究成果](/myblog/research/)；完整学术经历见[简历](/myblog/resume/)。博客[文章](/myblog/archives/)独立收录，之后也会写学术之外的内容。
+写过的见[文章](/myblog/archives/)，做过的见[作品](/myblog/works/)，随手留住的见[片刻](/myblog/moments/)。论文与经历另见[研究成果](/myblog/research/)和[简历](/myblog/resume/)。
 
 ### 联系方式
 

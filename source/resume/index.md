@@ -195,7 +195,7 @@ comments: false
 |---|---|---|
 | [**CNKI Journal Filter**](https://github.com/beibeihk/cnki-journal-filter) | Microsoft Edge / Google Chrome 浏览器插件 | 面向经济学与管理学文献筛选的知网检索辅助工具；已上架 Microsoft Edge 扩展商店，可搜索“CNKI Journal Filter”。 |
 | [**金税果园**](https://github.com/beibeihk/jinshui-guoyuan) | Godot；Windows / Web | 以果园经营、税务申报与概率稽查为核心的策略游戏；已发布于 itch.io，可搜索“Golden Tax Orchard”。 |
-| **学术黄历** | HarmonyOS；ArkTS / ArkUI | 面向科研人员的离线日签与工作台；2026 年 9 月上架华为应用市场，提供科研“宜忌”与学术签、科研计划、专注计时和七日回顾；另开发按学科门类生成专属内容的后续版本。 |
+| [**学术黄历**](https://github.com/beibeihk/academic-almanac-harmonyos) | HarmonyOS；ArkTS / ArkUI | 面向科研人员的离线日签与工作台；2026 年 9 月上架华为应用市场，提供科研“宜忌”与学术签、科研计划、专注计时和七日回顾；另开发按学科门类生成专属内容的后续版本。 |
 
 ### 🏅 奖项与证书
 

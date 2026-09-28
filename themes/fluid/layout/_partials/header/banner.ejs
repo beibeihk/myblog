@@ -9,7 +9,7 @@ var labHomeHero = page.lab_home === true
 <div id="banner" class="banner <%= labHomeHero ? 'lab-banner-home' : 'lab-banner-inner' %>" <%- !labHomeHero && theme.banner && theme.banner.parallax ? 'parallax="true"' : '' %>
      <%- labHomeHero ? '' : `style="background: url('${url_for(banner_img)}') no-repeat center center; background-size: cover;"` %>>
   <% if (labHomeHero) { %>
-    <img class="lab-home-photo" src="<%= url_for(banner_img) %>" alt="武汉湖畔的夜景与水中倒影" width="4624" height="3472" fetchpriority="high">
+    <img class="lab-home-photo" src="<%= url_for(banner_img) %>" alt="合肥天鹅湖夜景与水中倒影" width="4624" height="3472" fetchpriority="high">
   <% } else { %>
     <div class="full-bg-img">
       <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= parseFloat(banner_mask_alpha) %>)">

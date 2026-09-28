@@ -24,6 +24,7 @@ comments: false
       <span>应用 · HarmonyOS</span>
       <h2>学术黄历</h2>
       <p>给科研日常做的离线日签、计划与回顾工具。</p>
+      <a href="https://github.com/beibeihk/academic-almanac-harmonyos">查看项目 ↗</a>
     </li>
   </ul>
 
