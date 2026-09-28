@@ -128,7 +128,7 @@ Fluid.events = {
     if (!('NProgress' in window)) { return; }
 
     var bg = document.getElementById('banner');
-    if (bg) {
+    if (bg && bg.style.backgroundImage) {
       var src = bg.style.backgroundImage;
       var url = src.match(/\((.*?)\)/)[1].replace(/(['"])/g, '');
       var img = new Image();

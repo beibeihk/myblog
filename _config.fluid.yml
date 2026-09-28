@@ -1,8 +1,10 @@
-# Personal blog overrides: writing, research, and everyday life.
+# Personal blog overrides: writing, works, and everyday life.
 custom_css:
   - /css/papers.css
   - /css/resume.css
   - /css/lab.css
+custom_js:
+  - /js/signature.js
 
 # Keep the personal avatar visible immediately; post images remain lazy loaded.
 lazyload:
@@ -20,7 +22,8 @@ navbar:
   menu:
     - { key: home, name: 首页, link: / }
     - { key: archive, name: 文章, link: /archives/ }
-    - { key: research, name: 研究成果, link: /research/ }
+    - { key: works, name: 作品, link: /works/ }
+    - { key: moments, name: 片刻, link: /moments/ }
     - { key: resume, name: 简历, link: /resume/ }
     - { key: about, name: 关于, link: /about/ }
 
@@ -40,7 +43,7 @@ index:
   banner_img_height: 70
   banner_mask_alpha: 0
   slogan:
-    enable: true
+    enable: false
     text: '摛门不安横，无复相关意。'
 
 post:

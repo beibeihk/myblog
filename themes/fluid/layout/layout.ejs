@@ -21,7 +21,7 @@ var colorSchema = theme.dark_mode && theme.dark_mode.enable && theme.dark_mode.d
       <%- body %>
     <% } else { %>
       <div class="container nopadding-x-md">
-        <div id="board"
+        <div id="board" class="<%= page.lab_home ? 'lab-board-home' : '' %>"
           <%- banner_img_height >= 100 && theme.banner && theme.banner.parallax ? 'style="margin-top: 0"' : '' %>>
           <% if(page.layout === 'about') { %>
             <div class="about-avatar">

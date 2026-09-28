@@ -6,19 +6,13 @@ var subtitle = page.subtitle || page.title
 var labHomeHero = page.lab_home === true
 %>
 
-<div id="banner" class="banner <%= labHomeHero ? 'lab-banner-home' : 'lab-banner-inner' %>" <%- theme.banner && theme.banner.parallax ? 'parallax="true"' : '' %>
-     style="background: url('<%- url_for(banner_img) %>') no-repeat center center; background-size: cover;">
-  <div class="full-bg-img">
-    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= parseFloat(banner_mask_alpha) %>)">
-      <% if (labHomeHero) { %>
-        <div class="lab-hero">
-          <p class="lab-hero-eyebrow">写于武汉 <span aria-hidden="true">/</span> KUN HUANG'S SPACE</p>
-          <h1>黄坤的空间</h1>
-          <p class="lab-hero-signature">摛门不安横，无复相关意。</p>
-          <p class="lab-hero-lead">写研究，也写研究之外的生活。<br>在真实世界里寻找问题，在字里行间留下自己。</p>
-          <div class="lab-hero-actions"><a class="lab-hero-link" href="#lab-writing-title">从最近的文字开始 <span aria-hidden="true">↓</span></a></div>
-        </div>
-      <% } else { %>
+<div id="banner" class="banner <%= labHomeHero ? 'lab-banner-home' : 'lab-banner-inner' %>" <%- !labHomeHero && theme.banner && theme.banner.parallax ? 'parallax="true"' : '' %>
+     <%- labHomeHero ? '' : `style="background: url('${url_for(banner_img)}') no-repeat center center; background-size: cover;"` %>>
+  <% if (labHomeHero) { %>
+    <img class="lab-home-photo" src="<%= url_for(banner_img) %>" alt="武汉湖畔的夜景与水中倒影" width="4624" height="3472" fetchpriority="high">
+  <% } else { %>
+    <div class="full-bg-img">
+      <div class="mask flex-center" style="background-color: rgba(0, 0, 0, <%= parseFloat(banner_mask_alpha) %>)">
         <div class="banner-text text-center fade-in-up">
           <div class="h2">
             <% if(theme.fun_features.typing.enable && in_scope(theme.fun_features.typing.scope)) { %>
@@ -29,13 +23,12 @@ var labHomeHero = page.lab_home === true
           </div>
           <% if (is_post()) { %><%- inject_point('postMetaTop') %><% } %>
         </div>
-      <% } %>
-
-      <% if (theme.scroll_down_arrow.enable && theme.scroll_down_arrow.banner_height_limit <= banner_img_height && page.layout !== '404') { %>
-        <div class="scroll-down-bar">
-          <i class="iconfont icon-arrowdown"></i>
-        </div>
-      <% } %>
+        <% if (theme.scroll_down_arrow.enable && theme.scroll_down_arrow.banner_height_limit <= banner_img_height && page.layout !== '404') { %>
+          <div class="scroll-down-bar">
+            <i class="iconfont icon-arrowdown"></i>
+          </div>
+        <% } %>
+      </div>
     </div>
-  </div>
+  <% } %>
 </div>

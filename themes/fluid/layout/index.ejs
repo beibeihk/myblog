@@ -10,13 +10,14 @@ page.subtitle = firstPage ? config.subtitle : '文章'
 
 <div id="lab-home" class="lab-home <%= firstPage ? 'lab-home-first' : 'lab-home-archive' %>">
   <% if (firstPage) { %>
+    <section class="lab-signature" aria-label="博客签名">
+      <p class="lab-signature-text">摛门不安横，无复相关意。</p>
+    </section>
     <section class="lab-introduction" aria-labelledby="lab-intro-title">
       <div class="lab-intro-copy">
-        <p class="lab-eyebrow">关于这个角落 <span aria-hidden="true">/</span> ABOUT</p>
         <h2 id="lab-intro-title">你好，我是黄坤。</h2>
-        <p>在武汉读财政学博士，也喜欢把读到的、想到的和经历过的事写下来。这里有论文与方法，也会有书、城市、游戏和生活。</p>
-        <p class="lab-intro-english" lang="en">Research, essays, and fragments of everyday life — written from Wuhan.</p>
-        <p class="lab-personal-tags">双鱼男 <span aria-hidden="true">·</span> INFP <span aria-hidden="true">·</span> 永远对新问题好奇</p>
+        <p>在武汉读财政学博士。写研究，也记下书、城市、游戏和生活。</p>
+        <p class="lab-personal-tags">双鱼男 <span aria-hidden="true">·</span> INFP</p>
       </div>
       <a class="lab-intro-portrait" href="<%= url_for('/about/') %>" aria-label="进一步认识黄坤"><img src="<%= url_for('/img/dreamer.jpg') %>" alt="黄坤原有博客头像：电影《白日梦想家》画面" loading="eager"><span>关于我 <span aria-hidden="true">↗</span></span></a>
     </section>
@@ -28,7 +29,6 @@ page.subtitle = firstPage ? config.subtitle : '文章'
         <div>
           <p class="lab-eyebrow"><%= firstPage ? '最近的文字 / JOURNAL' : '文章目录 / ARCHIVE' %></p>
           <h2 id="lab-writing-title"><%= firstPage ? '最近写下的' : '文章' %></h2>
-          <p>研究札记、阅读与日常，按写下的时间排在一起。</p>
         </div>
         <% if (firstPage) { %><a class="lab-text-link" href="<%= url_for('/archives/') %>">全部文章 <span aria-hidden="true">↗</span></a><% } %>
       </div>
@@ -47,23 +47,16 @@ page.subtitle = firstPage ? config.subtitle : '文章'
           </li>
         <% }) %>
       </ol>
-      <% if (firstPage) { %><a class="lab-all-writing" href="<%= url_for('/archives/') %>">继续翻阅文章目录 <span aria-hidden="true">→</span></a><% } %>
     </section>
 
     <% if (firstPage) { %>
       <aside class="lab-side-notes" aria-label="博客其他入口">
         <div class="lab-side-note">
-          <p class="lab-eyebrow">另一些线索</p>
-          <p>写在博客里的文章，与正式的研究成果各有自己的位置。</p>
-          <nav aria-label="研究与简历">
-            <a href="<%= url_for('/research/') %>"><span>研究成果</span><span aria-hidden="true">↗</span></a>
-            <a href="<%= url_for('/resume/') %>"><span>学术简历</span><span aria-hidden="true">↗</span></a>
+          <p class="lab-eyebrow">继续逛逛</p>
+          <nav aria-label="作品与片刻">
+            <a href="<%= url_for('/works/') %>"><span>作品</span><span aria-hidden="true">↗</span></a>
+            <a href="<%= url_for('/moments/') %>"><span>片刻</span><span aria-hidden="true">↗</span></a>
           </nav>
-        </div>
-        <div class="lab-side-letter">
-          <p class="lab-eyebrow">写给读者</p>
-          <blockquote>有些问题值得写成论文，有些只适合留在一篇随笔里。这里都欢迎。</blockquote>
-          <a href="<%= url_for('/about/') %>">再认识我一点 <span aria-hidden="true">↗</span></a>
         </div>
       </aside>
     <% } %>
