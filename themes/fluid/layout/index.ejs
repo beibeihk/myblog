@@ -16,7 +16,7 @@ page.subtitle = firstPage ? config.subtitle : '文章'
     <section class="lab-introduction" aria-labelledby="lab-intro-title">
       <div class="lab-intro-copy">
         <h2 id="lab-intro-title">你好，我是黄坤。</h2>
-        <p>在武汉读财政学博士。写研究，也记下书、城市、游戏和生活。</p>
+        <p>在武汉读财政学博士。写研究，也记下书、城市、梦想和感情。</p>
         <p class="lab-personal-tags">双鱼男 <span aria-hidden="true">·</span> INFP</p>
       </div>
       <a class="lab-intro-portrait" href="<%= url_for('/about/') %>" aria-label="进一步认识黄坤"><img src="<%= url_for('/img/dreamer.jpg') %>" alt="黄坤原有博客头像：电影《白日梦想家》画面" loading="eager"><span>关于我 <span aria-hidden="true">↗</span></span></a>
@@ -53,9 +53,11 @@ page.subtitle = firstPage ? config.subtitle : '文章'
       <aside class="lab-side-notes" aria-label="博客其他入口">
         <div class="lab-side-note">
           <p class="lab-eyebrow">继续逛逛</p>
-          <nav aria-label="作品与片刻">
+          <nav aria-label="博客栏目">
             <a href="<%= url_for('/works/') %>"><span>作品</span><span aria-hidden="true">↗</span></a>
             <a href="<%= url_for('/moments/') %>"><span>片刻</span><span aria-hidden="true">↗</span></a>
+            <a href="<%= url_for('/resume/') %>"><span>简历</span><span aria-hidden="true">↗</span></a>
+            <a href="<%= url_for('/about/') %>"><span>关于</span><span aria-hidden="true">↗</span></a>
           </nav>
         </div>
       </aside>

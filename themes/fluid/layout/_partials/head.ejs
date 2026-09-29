@@ -15,6 +15,9 @@ var ogConfig = Object.assign({ image: ogImage && url_for(ogImage) }, theme.open_
 
 <head>
   <meta charset="UTF-8">
+  <meta name="turbo-root" content="<%= config.root %>">
+  <script src="<%= url_for('/js/turbo.js') %>" defer></script>
+  <script src="<%= url_for('/js/site-navigation.js') %>" defer></script>
 
   <link rel="apple-touch-icon" sizes="76x76" href="<%= url_for(theme.apple_touch_icon) %>">
   <link rel="icon" href="<%= url_for(theme.favicon) %>">

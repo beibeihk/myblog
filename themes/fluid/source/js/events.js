@@ -83,6 +83,10 @@ Fluid.events = {
   },
 
   registerScrollTopArrowEvent: function() {
+    if (window.labScrollTopCleanup) {
+      window.labScrollTopCleanup();
+      window.labScrollTopCleanup = null;
+    }
     var topArrow = jQuery('#scroll-top-button');
     if (topArrow.length === 0) {
       return;
@@ -105,10 +109,10 @@ Fluid.events = {
       });
     };
     setTopArrowPos();
-    jQuery(window).resize(setTopArrowPos);
+    window.addEventListener('resize', setTopArrowPos);
     // Display
     var headerHeight = board.offset().top;
-    Fluid.utils.listenScroll(function() {
+    var scrollListener = Fluid.utils.listenScroll(function() {
       var scrollHeight = document.body.scrollTop + document.documentElement.scrollTop;
       scrollDisplay = scrollHeight >= headerHeight;
       topArrow.css({
@@ -122,6 +126,10 @@ Fluid.events = {
         easing   : 'swing'
       });
     });
+    window.labScrollTopCleanup = function() {
+      window.removeEventListener('resize', setTopArrowPos);
+      Fluid.utils.unlistenScroll(scrollListener);
+    };
   },
 
   registerImageLoadedEvent: function() {

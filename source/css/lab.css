@@ -165,6 +165,9 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .lab-research-footnote { padding-top: 1.2rem; border-top: 1px solid var(--lab-line); color: var(--lab-muted); line-height: 1.8; }
 
 /* Article pages stay calm even with equations, code, and wide tables. */
+.post-content .markdown-body, .about-content .markdown-body, .page-content .markdown-body {
+  color: var(--lab-ink); background-color: transparent;
+}
 .post-content { max-width: 900px; padding-right: clamp(1.25rem, 6vw, 5rem); padding-left: clamp(1.25rem, 6vw, 5rem); }
 .post-content .markdown-body { font-family: var(--lab-sans); font-size: 1.06rem; line-height: 1.87; overflow-wrap: anywhere; }
 .post-content .markdown-body p, .about-content .markdown-body p { line-height: 1.87; }

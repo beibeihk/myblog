@@ -52,6 +52,8 @@ post:
   banner_mask_alpha: 0.25
 
 archive:
+  title: 文章
+  subtitle: 文章
   banner_img: /img/swan_lake.jpg
   banner_img_height: 40
 
